@@ -6,28 +6,46 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="KaçanButon" Height="450" Width="800">
-    <Grid Name="grdıcerık" ShowGridLines="True">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF44B058" Offset="0.206"/>
+            <GradientStop Color="#FFC778B1" Offset="0.684"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Name="grdıcerık" ShowGridLines="True" Background="#FF2ECF5A">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0,8*"></ColumnDefinition>
             <ColumnDefinition Width="0,2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
         <Button Name="KacanButon1" Content="Button" VerticalAlignment="Top" Height="75"  MouseMove="KacanButon1_MouseMove" HorizontalAlignment="Left" Width="75" Grid.Column="0" />
         <Rectangle Grid.Column="1" Panel.ZIndex="1">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3545E4" Offset="0"/>
                     <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FF702D7A" Offset="0.332"/>
+                    <GradientStop Color="#FFDAD6DA" Offset="0.332"/>
                     <GradientStop Color="#FFA9A978" Offset="0.571"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
 
+        <Grid x:Name="grdGosterge" Grid.Column="2" ShowGridLines="True" Panel.ZIndex="3">
 
-        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Panel.ZIndex="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
 
-            <Label Name="lbl1" Content="Label" Height="132" Width="137" SizeChanged="Lbl1_SizeChanged_1" Background="#FFFFC7C7" />
-        </Label>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" Panel.ZIndex="1">
+
+                <Label Name="lbl1" Grid.Column="3" Content="Skor" Height="132" Width="137" VerticalAlignment="Top" HorizontalAlignment="Left" SizeChanged="Lbl1_SizeChanged_1" Background="#FFFFC7C7" />
+            </Label>
+            <Label Name="lblAdSoyad" Grid.Column="3" VerticalAlignment="Bottom" Content="AdSoyad" Panel.ZIndex="2" ></Label>
+            <Label Name="Sayac" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Height="35" Content="10" Background="#FFFDFD1D" FontSize="25" />
+
+        </Grid>
+
 
     </Grid>
 </Window>

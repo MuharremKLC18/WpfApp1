@@ -30,7 +30,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            KaçanButon K1 = new KaçanButon();
+            KaçanButon K1 = new KaçanButon(txtAd.Text,txtSoyad.Text);
 
             K1.Show();
 
