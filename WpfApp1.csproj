@@ -58,6 +58,7 @@
     <Compile Include="GridÖrnek.xaml.cs">
       <DependentUpon>GridÖrnek.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Oyuncu.cs" />
     <Compile Include="RastgeleButonlar.xaml.cs">
       <DependentUpon>RastgeleButonlar.xaml</DependentUpon>
     </Compile>

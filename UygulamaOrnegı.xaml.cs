@@ -30,7 +30,10 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            KaçanButon K1 = new KaçanButon(txtAd.Text,txtSoyad.Text);
+            //Oyuncu oyn = new Oyuncu();
+            //oyn.Ad = txtAd.Text;
+            //oyn.Soyad = txtSoyad.Text;
+            KaçanButon K1 = new KaçanButon(new Oyuncu { Ad = txtAd.Text, Soyad = txtSoyad.Text });
 
             K1.Show();
 
