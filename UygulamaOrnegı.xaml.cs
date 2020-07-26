@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Model;
 
 namespace WpfApp1
 {
@@ -33,7 +34,7 @@ namespace WpfApp1
             //Oyuncu oyn = new Oyuncu();
             //oyn.Ad = txtAd.Text;
             //oyn.Soyad = txtSoyad.Text;
-            KaçanButon K1 = new KaçanButon(new Oyuncu { Ad = txtAd.Text, Soyad = txtSoyad.Text });
+            KaçanButon K1 = new KaçanButon(new Oyuncu { Ad = txtAd.Text, Soyad = txtSoyad.Text});
 
             K1.Show();
 

@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using WpfApp1.Model;
 
 namespace WpfApp1
 {
@@ -102,10 +103,11 @@ namespace WpfApp1
         {
             if (sure == 0)
             {
-                SkorKaydet(Puan, DateTime.Now, o);
+                //SkorKaydet(new Skor {Player=o,Puan=Puan,Tarih=DateTime.Now });
+                SkorKaydet(new Skor(o, Puan, DateTime.Now));
                 timer.Stop();
                 KacanButon1.Visibility = Visibility.Hidden;
-                MessageBoxResult cevap = MessageBox.Show($"Oyun Bitti Kanka Bidaha Kapışalım mı?\n Puanın{Puan}\nYeniden Başlamak İstermisin?", "Oyun Bitti", MessageBoxButton.YesNo);
+                MessageBoxResult cevap = MessageBox.Show($"Oyun Bitti Kanka Bidaha Kapışalım mı?\n Puanın{Puan}\n\r", "Oyun Bitti", MessageBoxButton.YesNo);
                 if (cevap == MessageBoxResult.Yes)
                 {
 
@@ -147,9 +149,9 @@ namespace WpfApp1
         #endregion
 
         #region Skor Kayıt
-        void SkorKaydet(int puan, DateTime Tarih, Oyuncu o)
+        void SkorKaydet(Skor s)
         {
-            File.AppendAllText(@"D:\Skorlar.txt", $"{o.Ad} {o.Soyad} İsimli Oyuncu {Tarih} Tarihinde {Puan} Puan Aldı.\n\r");
+            File.AppendAllText(@"D:\Skorlar.txt", $"{s.Player.Ad} {s.Player.Soyad} İsimli Oyuncu {s.Tarih} Tarihinde {s.Puan} Puan Aldı.\n\r");
         }
         #endregion
 
